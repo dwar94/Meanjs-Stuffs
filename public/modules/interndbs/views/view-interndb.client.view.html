@@ -1,0 +1,28 @@
+<section data-ng-controller="InterndbsController" data-ng-init="findOne()">
+	<div class="page-header">
+		<h1 data-ng-bind="interndb.name"></h1>
+        <table border=1>
+          <th>Name</th>
+          <th>Degree</th>
+          <th>College</th>
+          
+          <tr >         
+          <td>{{interndb.name}}</td>
+          <td>{{interndb.degree}}</td>
+          <td>{{interndb.college}}</td>
+          </tr>
+      </table>
+	</div>
+	<div class="pull-right" data-ng-show="((authentication.user) && (authentication.user._id == interndb.user._id))">
+		<a class="btn btn-primary" href="/#!/interndbs/{{interndb._id}}/edit">
+			<i class="glyphicon glyphicon-edit"></i>
+		</a>
+		<a class="btn btn-primary" data-ng-click="remove();">
+			<i class="glyphicon glyphicon-trash"></i>
+		</a>
+	</div>
+	<small>
+		<em class="text-muted">
+		</em>
+	</small>
+</section>
